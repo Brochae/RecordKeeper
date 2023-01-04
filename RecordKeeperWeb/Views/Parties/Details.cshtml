@@ -1,0 +1,33 @@
+﻿@using RecordKeeperBizObjects;
+@model bizParty
+
+<div class="row">
+    <h1>@Model.PartyName</h1>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @Model.PartyName started in @Model.YearStarted and has @Model.PresidentCount presidents.
+        The party color is <span style="color:@Model.Color">
+            @Model.Color.
+
+        </span>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            @Html.ActionLink("Edit", "Edit", new{id= Model.PartyName},new{Class = "btn btn-primary"})
+        </div>
+                <div class="col-md-2">
+            @Html.ActionLink("Delete", "Delete", new{id= Model.PartyName},new{Class = "btn btn-danger"})
+        </div>
+    </div>
+</div>
+<div class="row">
+    <ul>
+        @foreach (bizPresident prez in Model.PresidentList(true))
+        {
+            <li>
+                @Html.ActionLink(prez.Num +" " + prez.FirstName+" "+prez.LastName,"President","USGov", new{id=prez.Code})
+            </li>
+        }
+    </ul>
+</div>

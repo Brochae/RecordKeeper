@@ -1,0 +1,77 @@
+﻿@model RecordKeeperBizObjects.bizPresident
+
+@{
+    ViewData["Title"] = "President";
+}
+
+<h1>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName), @Html.DisplayNameFor(model => model.PartyId)</h1>
+
+<div>
+    <h4 class="text-muted">Term: @Html.DisplayFor(model => model.TermStart) - @Html.DisplayFor(model => model.TermEnd)</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-2">
+            <img src="/images/@(Model.Num.ToString()).jpeg"  class="rounded-pill img-fluid align-content-lg-start border-white" width="300" style="border:.5rem double"/>
+        </div>
+        <div class="col-md-10">
+            <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PartyId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PartyId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Num)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Num)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TermStart)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TermStart)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TermEnd)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TermEnd)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateBorn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateBorn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateDied)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateDied)
+            </dd>
+    </dl>
+        </div>
+    </div>
+
+    
+
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Code }) |
+    <a asp-action="Index">Back to List</a>
+</div>
